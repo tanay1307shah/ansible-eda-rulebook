@@ -13,10 +13,7 @@
       action:
         debug:
     - name: Test Rule Conditional
-      condition: 
-        all:
-          - event.payload.message is defined
-          - event.payload.message is regex(".*var.*log.*")
+      condition: event.payload.message is defined and event.payload.message is regex("\/var\/log",ignorecase=True)
       action:
         debug:
   #   - name: Say Hello
