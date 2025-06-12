@@ -12,6 +12,13 @@
       condition: event.payload is defined
       action:
         debug:
+    - name: Test Rule Conditional
+      condition: 
+        all:
+          - event.payload is defined
+          - event.payload.message is regex("/var/log",ignorecase=True)
+      action:
+        debug:
   #   - name: Say Hello
   #     condition: event.payload.message == "Ansible is super cool!
   # ## Define the action we should take should the condition be met
