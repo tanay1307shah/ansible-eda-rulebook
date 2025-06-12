@@ -9,14 +9,14 @@
   ## Define the conditions we are looking for
   rules:
     - name: Test Rule
-      condition: event.payload is defined
+      condition: event.payload.message is defined
       action:
         debug:
     - name: Test Rule Conditional
       condition: 
         all:
-          - event.payload is defined
-          - event.payload.message contains "75"
+          - event.payload.message is defined
+          - event.payload.message is search("/var/log",ignorecase=True)
       action:
         debug:
   #   - name: Say Hello
