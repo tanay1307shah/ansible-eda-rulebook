@@ -16,7 +16,7 @@
       condition: 
         all:
           - event.payload is defined
-          - '/var/log' contains event.payload.message
+          - event.payload.message contains '/var/log'
       action:
         debug:
   #   - name: Say Hello
