@@ -9,7 +9,7 @@
   ## Define the conditions we are looking for
   rules:
     - name: Test Rule Conditional
-      condition: event.payload.message is defined and event.payload.message is regex("\/var\/log",ignorecase=True)
+      condition: event.payload.message is regex("\/var\/log",ignorecase=True)
       action:
         debug:
     - name: Test Rule
